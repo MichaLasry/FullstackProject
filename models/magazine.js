@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const MAGAZINE = mongoose.Schema({
+const magazine = mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -11,4 +11,4 @@ const MAGAZINE = mongoose.Schema({
     user:{type:mongoose.Schema.Types.ObjectId,ref:'user'},
     posts:[{type:mongoose.Schema.Types.ObjectId,ref:'post'}]
 })
-module.exports = mongoose.model('magazine',MAGAZINE)
+module.exports = mongoose.model('magazine',magazine)
