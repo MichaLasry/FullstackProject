@@ -1,12 +1,10 @@
 const mongoose=require('mongoose')
-
+const User =require('../models/user')
 
 const createUser = async (req, res) => {
 
-    console.log("req.body", req.body.userName)
     let currentUser = new User(req.body)
-
-  
+    
     try {
         await currentUser.save()
         console.log('user saved ', currentUser)

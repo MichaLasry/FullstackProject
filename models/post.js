@@ -1,5 +1,4 @@
 const mongoose = require("mongoose")
-
 const Post = mongoose.Schema({
     title: {
         type: String,
@@ -8,6 +7,6 @@ const Post = mongoose.Schema({
     date: {
         type: Date,
     },
-    post:{type:mongoose.Schema.Types.ObjectId,ref:'magazine'},
+    magazine:{type:mongoose.Schema.Types.ObjectId,ref:'post'},
 })
 module.exports = mongoose.model('post',Post)

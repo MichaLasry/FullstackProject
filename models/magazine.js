@@ -1,5 +1,6 @@
 const mongoose = require("mongoose")
-const magazine = mongoose.Schema({
+// const post = require('./post')
+const Magazine = mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -11,4 +12,4 @@ const magazine = mongoose.Schema({
     user:{type:mongoose.Schema.Types.ObjectId,ref:'user'},
     posts:[{type:mongoose.Schema.Types.ObjectId,ref:'post'}]
 })
-module.exports = mongoose.model('magazine',magazine)
+module.exports = mongoose.model('magazine',Magazine)
