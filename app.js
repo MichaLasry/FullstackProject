@@ -19,7 +19,7 @@ const optionsConnection = {
 const mongoose=require("mongoose")
 mongoose.connect(process.env.DB_CONNECT,optionsConnection)
 .then(()=>{console.log("connected to db")})
-.catch(error=>{console.log(`error connect ${error}`)})
+.catch(error=>{console.log(`error connect db ${error}`)})
 
 app.use(cors(), bodyParser.json(), router)
 app.listen(process.env.PORT,

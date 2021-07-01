@@ -11,18 +11,18 @@ const createPost = async (req, res) => {
       magazine.posts.push(post._id)
       await magazine.save()
       console.log(post);
-      res.json(post)
+      res.send(200).json(post)
   } catch (error) {
-      res.send(error)
+      res.status(400).send(error)
   }
 }
 
 const getPost = (req,res) =>{
   Post.findById(req.params.postId).populate('magazine').then((post)=>{
     // Task.findById(taskId).populate('user')
-    res.json(post)
+    res.status(200).json(post)
   }).catch((error)=>{
-    es.send(error)})
+    es.status(400).send(error)})
 }
 
 const getPosts = async(req,res) => {
